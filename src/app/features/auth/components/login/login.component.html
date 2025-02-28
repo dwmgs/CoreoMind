@@ -1,0 +1,37 @@
+<div class="login-container">
+
+      <a routerLink="" class="login-arrow" style="cursor: pointer; margin-top: 30px; margin-left: 30px;">
+        <svg width="30" height="30" viewBox="0 0 59 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M54.918 43.0015L34.2157 23.7779L54.918 4.55435" stroke="white" stroke-width="5.51686" stroke-linecap="square" />
+          <path d="M25.3359 43.0015L4.63364 23.7779L25.3359 4.55435" stroke="white" stroke-width="5.51686" stroke-linecap="square" />
+        </svg>
+      </a>
+
+
+      <form #loginForm (submit)="onSubmit()" class="login-form">
+
+        <h1 class="login-title">Login</h1>
+
+        <div class="login-field">
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="text" placeholder="Digite seu Email" [(ngModel)]="email" required />
+        </div>
+
+        <div class="login-field">
+          <label for="password">Senha:</label>
+          <input id="password" name="password" type="password" placeholder="Digite sua Senha" [(ngModel)]="password" required />
+        </div>
+
+        <button class="login-button" type="submit">Entrar</button>
+
+        <div class="d-flex flex-column align-items-center">
+          <div class="alert alert-danger" *ngIf="loginError">
+            Login e/ou Senha incorreto(a).</div>
+        </div>
+
+        <a routerLink="/forgotPassword" class="links">Esqueci a senha</a>
+
+        <a routerLink="/signup" class="links">Não possui conta? Cadastre-se</a>
+
+      </form>
+    </div>

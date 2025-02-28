@@ -1,0 +1,52 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading"></div>
+
+                <a class="nav-link" routerLink="/client/lobby">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-home"></i></div>
+                    Lobby
+                </a>
+
+                <a class="nav-link" (click)="toggleMenu('coreografias')">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-brain"></i></div>
+                    Coreografias
+                    <i class="fas" [class.fa-angle-right]="!isMenuOpen('coreografias')"
+                        [class.fa-angle-down]="isMenuOpen('coreografias')" style="margin-left: auto;"></i>
+                </a>
+                <div *ngIf="isMenuOpen('coreografias')" class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link d-flex align-items-center gap-2" routerLink="/client/didatica">
+                        Didática
+                    </a>
+                    <a class="nav-link d-flex align-items-center gap-2" routerLink="/client/meta-aprendizagem">
+                        Meta-Aprendizagem
+                    </a>
+                </div>
+
+                <a class="nav-link" (click)="toggleMenu('questionarios')">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                    Questionários
+                    <i class="fas" [class.fa-angle-right]="!isMenuOpen('questionarios')"
+                        [class.fa-angle-down]="isMenuOpen('questionarios')" style="margin-left: auto;"></i>
+                </a>
+                <div *ngIf="isMenuOpen('questionarios')" class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link d-flex align-items-center gap-2" routerLink="/client/vark">
+                        VARK
+                    </a>
+                    <a class="nav-link d-flex align-items-center gap-2" routerLink="/client/honney-alonso">
+                        Honney Alonso
+                    </a>
+                </div>
+
+
+                <a class="nav-link" routerLink="/home">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                    Sair
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+

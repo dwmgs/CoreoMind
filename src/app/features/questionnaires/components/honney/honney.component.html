@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <form *ngIf="!showResults" (ngSubmit)="submit($event)" class="p-4 shadow rounded bg-white">
+  
+      <div *ngFor="let questao of questoes; let i = index" class="form-check mb-3">
+        <input 
+          type="checkbox" 
+          class="form-check-input pergunta" 
+          [id]="'questao' + (i + 1)" 
+          [name]="'questao' + (i + 1)" 
+          (change)="onChange($event, questao.value)">
+  
+        <label class="form-check-label" [for]="'questao' + (i + 1)">
+          {{ i + 1 }}. {{ questao.label }}
+        </label>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success btn-lg">
+          <i class="fa-regular fa-floppy-disk"></i> Enviar
+        </button>
+      </div>
+  
+    </form>
+  </div>
+  
+    <div *ngIf="showResults" class="result-container">
+      <div class="message">
+        <h3>Questionário concluído! Obrigado por responder.</h3>
+      </div>
+      <canvas #doughnutChartCanvas></canvas>
+    </div>

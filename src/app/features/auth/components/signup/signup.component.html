@@ -1,0 +1,52 @@
+<div class="cadastro-container">
+
+            <a routerLink="/login" class="cadastro-arrow" style="cursor: pointer; margin-top: 30px; margin-left: 30px;">
+              <svg width="30" height="30" viewBox="0 0 59 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M54.918 43.0015L34.2157 23.7779L54.918 4.55435" stroke="white" stroke-width="5.51686" stroke-linecap="square" />
+                <path d="M25.3359 43.0015L4.63364 23.7779L25.3359 4.55435" stroke="white" stroke-width="5.51686" stroke-linecap="square" />
+              </svg>
+            </a>
+
+
+        <form class="cadastro-form" #cadastroForm="ngForm" (submit)="onSubmit()">
+            <h1 class="cadastro-title">Cadastro</h1>
+
+            <div class="cadastro-field">
+                <label for="name">Nome completo:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu Nome" [(ngModel)]="name" required>
+            </div>
+
+            <div class="cadastro-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Digite seu Email" [(ngModel)]="email" required>
+            </div>
+
+            <div class="cadastro-field">
+                <label for="senha">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua Senha" [(ngModel)]="password" required>
+            </div>
+
+            <div class="cadastro-field">
+                <label for="password">Confirmar Senha:</label>
+                <input type="confirmPassword" id="confirmPassword" placeholder="Confirme sua Senha" [(ngModel)]="confirmPassword" required>
+            </div>
+
+            <div class="d-flex flex-column align-items-center">
+                <div class="alert alert-danger" *ngIf="passwordsNoEquals">
+                  As Senhas não são iguais.</div>
+              </div>
+
+            <div class="d-flex flex-column align-items-center">
+                <div class="alert alert-danger" *ngIf="allDontFilled">
+                  Preencha todos os campos acima.</div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center">
+                <div class="alert alert-success" *ngIf="createdAccount">
+                  Conta criada com sucesso.</div>
+            </div>
+
+            <button class="cadastro-button" type="submit">Criar Conta</button>
+        </form>
+
+</div>

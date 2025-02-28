@@ -1,0 +1,27 @@
+
+.sb-topnav.navbar {
+    background-color:  #2e4ae1;
+}
+
+.sb-topnav.navbar .navbar-brand {
+    color: white;
+}
+
+.sb-topnav.navbar .btn-link {
+    color: white;
+}
+
+.sb-topnav.navbar .btn-link:hover {
+    color: lightblue;
+}
+
+
+a.logo {
+    float: left;
+}
+
+a.logo img {
+    float: left;
+    width: 180px;
+    height: auto;
+}
